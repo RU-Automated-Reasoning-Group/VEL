@@ -1,0 +1,9 @@
+We implement the verification-guided learning framework 
+VEL in this artifact. This artifact consists of two parts.
+The first part is the code for programmatic reinforcement learning
+algorithm from (Qiu and Zhu) to train programmatic controllers with 
+high rewards. The second part is our implementation of the VEL framework.
+Trained controllers are used for verification and 
+verification-guided learning by the VEL code. All results 
+presented in the paper, including both the figures and the table, 
+can be reproduced using the provided scripts.

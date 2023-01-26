@@ -1,0 +1,3 @@
+[submodule "flowstar"]
+	path = flowstar
+	url = git@github.com:chenxin415/flowstar.git
