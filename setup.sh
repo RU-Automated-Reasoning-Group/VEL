@@ -1,13 +1,3 @@
-# install dependencies
-cd packages
-sudo dpkg -i *.deb
-cd ..
-
-# install python packages
-cd pypackages
-python3.7 -m pip install *
-cd ..
-
 # install flowstar
 cd VEL/flowstar/flowstar-toolbox
 make -j 4
