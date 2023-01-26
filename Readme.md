@@ -37,11 +37,11 @@ evaluate various perturbed controllers simultaneously.
 
 The verification/training time reported in the paper is obtained by running our 
 tool on a desktop computer with Intel Core I7-12700K processor. Running our tool
-in the provided virtual machine (setting the number of CPU to 8) will produce results
+in a virtual machine (setting the number of CPU to 8) will produce results
 that are very similar to the results reported in the paper.
 
 Here, we provided estimated experiment runtime on a laptop with weaker performance.
-The following statistics are obtained by running our tool in the provided virtual machine
+The following statistics are obtained by running our tool in a virtual machine
 (setting the number of CPU to 4) on a MacBook Pro with Quad-core Intel Core i5 processor.
 
 
@@ -65,16 +65,9 @@ The following statistics are obtained by running our tool in the provided virtua
 # Reproducibility Instructions
 
 Note: the line start with a "\$" sign means a command for linux terminal
-      but the "$" sign itself is not part of the command
+      but the "\$" sign itself is not part of the command
 
-1. After downloading the zipped tool file, unzip this file to obtain a folder called 
-   VEL_complete, use the following command to go into this folder
-    $ cd VEL_complete
-
-2. Run the following commands to install all needed dependencies for VEL
-    $ bash setup.sh
-
-3.
+1.
   - First, we introduce the structure of the implementation. The Code for each benchmark 
     are in a separated folder. In a folder, a filed called output.model contains 
     a trained controller. The verify.sh script is used to measure the verification 
@@ -91,7 +84,6 @@ Note: the line start with a "\$" sign means a command for linux terminal
 
   - To reproduce the result for a specific benchmark, please run the following commands:
   ```
-    $ # current directory need to be VEL_complete/
     $ cd VEL/<benchmark-name>/
     $ bash verify.sh 1 # to measure the verification time for 1 time
     $ bash vel.sh 1 # (if this script exists) to measure the training time for 1 time
@@ -100,10 +92,9 @@ Note: the line start with a "\$" sign means a command for linux terminal
   - Available benchmark names are: ACC, B1, B2, B3, B4, B5, cartpole, oscillator, pendulum, 
     qmpc, tora, tora_inf, unicycle_car, MountainCar
 
-4.
+2.
   - To reproduce all the figures in the paper, please run the following commands
   ```
-    $ # current directory need to be VEL_complete/
     $ cd VEL/
     $ bash figure.sh 5
   ```
@@ -116,9 +107,8 @@ Note: the line start with a "\$" sign means a command for linux terminal
   - To reproduce the table in the paper, the verification/training time can be 
     collected by the following commands:
   ```
-    $ # current directory need to be VEL_complete/
     $ cd VEL/
-    $ python3 table.py 
+    $ python3.7 table.py 
   ```
 
     After running this script, a table.txt file containing verification/training
@@ -127,11 +117,10 @@ Note: the line start with a "\$" sign means a command for linux terminal
     Note: Running each benchmark for 5 times may be time consuming. You may consider changing 
     5 to 1 for evaluation.
 
-5. 
+3. 
   - To train a new controller for a benchmark, run the following commands
   ```
-    $ # current directory need to be VEL_complete/
-    $ bash train_new.sh <benchmark-name>
+    $ bash train_new.sh <benchmark-name> <seed>
   ```
 
   - Available benchmark names are: ACC, B1, B2, B3, B4, B5, cartpole, oscillator, pendulum, 

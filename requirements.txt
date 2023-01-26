@@ -9,3 +9,5 @@ six==1.16.0
 tabulate==0.8.9
 torch==1.10.2
 tqdm==4.64.0
+importlib-metadata==4.13.0
+Pillow==9.4.0
